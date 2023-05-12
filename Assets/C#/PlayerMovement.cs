@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     private bool onCollision = false;
     private bool isSkilling = false;
     private bool isAttack = false;
-
+    private bool isRunningEnabled = true;
 
     private float storedDirection;
 
@@ -80,9 +80,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
             playerAnimator.SetBool("IsFloating", true);
+
         }
 
-        if (Mathf.Abs(direction) > 0.01f)
+        if (Mathf.Abs(direction) > 0.01f && isRunningEnabled)
         {
             HorizontalMove(direction);
             playerAnimator.SetBool("IsRunning", true);
@@ -142,6 +143,7 @@ public class PlayerMovement : MonoBehaviour
     {
         playerAnimator.SetBool("IsFloating", false);
         onCollision = true;
+        isRunningEnabled = true;
     }
 
     private void OnCollisionExit2D(Collision2D collision)
@@ -186,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
         isDashing = false;
         playerAnimator.SetBool("IsDashing", false);
+        playerAnimator.SetBool("IsFloating", true);
         playerInput.SetButtonSwordEnabled(true);
     }
 
@@ -222,7 +225,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("IsHitting", false);
             playerAnimator.SetBool("FirstCombo", false);
-            playerInput.SetButtonSwordEnabled(false);
             StartCoroutine(SwordAnim());
         }
     }
@@ -239,7 +241,6 @@ public class PlayerMovement : MonoBehaviour
             playerAnimator.SetBool("IsHitting", false);
             playerAnimator.SetBool("FirstCombo", false);
             playerAnimator.SetBool("SecondCombo", false);
-            playerInput.SetButtonSwordEnabled(false);
             StartCoroutine(SwordAnim());
         }
     }
@@ -250,19 +251,32 @@ public class PlayerMovement : MonoBehaviour
         {
             playerAnimator.SetBool("SecondCombo", false);
             playerAnimator.SetBool("FirstCombo", false);
+            StartCoroutine(SwordAnim());
         }
         else
         {
             playerAnimator.SetBool("IsHitting", false);
             playerAnimator.SetBool("FirstCombo", false);
             playerAnimator.SetBool("SecondCombo", false);
-            playerInput.SetButtonSwordEnabled(false);
             StartCoroutine(SwordAnim());
         }
     }
 
+    public void WaitForSingleAttack()
+    {
+        if(!isAttack)
+            StartCoroutine(WaitForSingle());
+    }
+    private IEnumerator WaitForSingle()
+    {
+        playerInput.SetButtonSwordEnabled(false);
+        yield return new WaitForSeconds(1f);
+        playerInput.SetButtonSwordEnabled(true);
+    }
+
     private IEnumerator SwordAnim()
     {
+        playerInput.SetButtonSwordEnabled(false);
         yield return new WaitForSeconds(0.5f);
         playerInput.SetButtonSwordEnabled(true);
     }

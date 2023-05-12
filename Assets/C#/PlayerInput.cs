@@ -24,7 +24,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Update()
     {
-        float horizontalDirection = Input.GetAxis(HorizontalAxis);
+        float horizontalDirection = Input.GetAxis(HorizontalAxis); ;
         bool isJumpButtonPressed = Input.GetButtonDown(JumpButton);
         bool isCrouchButtonPressed = false;
         bool isDashButtonPressed = false;

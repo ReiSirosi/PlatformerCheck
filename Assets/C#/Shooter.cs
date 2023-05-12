@@ -27,7 +27,7 @@ public class Shooter : MonoBehaviour
     {
         firePoint.localPosition = new Vector2(0.25f, 0.186f);
     }
-
+    
     public void SetFirePointMinus()
     {
         firePoint.localPosition = new Vector2(-0.25f, 0.186f);

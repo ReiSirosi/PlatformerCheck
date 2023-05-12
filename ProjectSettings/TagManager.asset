@@ -13,12 +13,12 @@ TagManager:
   - Water
   - UI
   - 
-  - Character
-  - Enemy
-  - Ground
   - 
   - 
-  - Sword
+  - 
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -42,18 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: WaterHigh
-    uniqueID: 1437380563
-    locked: 0
-  - name: Character
-    uniqueID: 2143866275
-    locked: 0
-  - name: Ground
-    uniqueID: 1142962511
+  - name: HightWater
+    uniqueID: 1389240319
     locked: 0
   - name: Objects
-    uniqueID: 2595054831
+    uniqueID: 243544115
     locked: 0
-  - name: WaterDown
-    uniqueID: 2537966081
+  - name: Character
+    uniqueID: 1242729123
+    locked: 0
+  - name: Ground
+    uniqueID: 673473093
+    locked: 0
+  - name: DownWater
+    uniqueID: 3772055405
     locked: 0
