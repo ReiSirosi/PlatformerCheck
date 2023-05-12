@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Damagable
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - Character
+  - Enemy
+  - Ground
+  - 
+  - 
+  - Sword
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: WaterHigh
+    uniqueID: 1437380563
+    locked: 0
+  - name: Character
+    uniqueID: 2143866275
+    locked: 0
+  - name: Ground
+    uniqueID: 1142962511
+    locked: 0
+  - name: Objects
+    uniqueID: 2595054831
+    locked: 0
+  - name: WaterDown
+    uniqueID: 2537966081
+    locked: 0
