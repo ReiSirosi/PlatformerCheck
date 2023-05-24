@@ -16,7 +16,7 @@ public class SwordAttack : MonoBehaviour
     {
         if (collision.CompareTag("Damagable"))
         {
-            collision.gameObject.GetComponent<Health>().DamageTake(damage);
+            collision.gameObject.GetComponent<HealthEnemy>().DamageTake(damage);
         }
     }
 }

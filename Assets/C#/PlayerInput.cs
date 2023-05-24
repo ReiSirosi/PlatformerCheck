@@ -3,6 +3,8 @@ using UnityEngine;
 public class PlayerInput : MonoBehaviour
 {
     private PlayerMovement playerMovement;
+    private PlayerAttacking playerAttacking;
+    private PlayerShooting playerShooting;
 
     public const string HorizontalAxis = "Horizontal";
     public const string VerticalAxis = "Vertical";
@@ -12,14 +14,18 @@ public class PlayerInput : MonoBehaviour
     public const string DashButton = "Dash";
     public const string SwordAttack = "Fire2";
 
+
     private bool isButtonCrouchEnabled = true;
     private bool isButtonShootEnabled = true;
-    private bool isButtonSwordEnabled = true;
+    private bool isButtonSwordEnabled = false;
     private bool isButtonDashEnabled = true;
+
 
     private void Awake()
     {
         playerMovement = GetComponent<PlayerMovement>();
+        playerAttacking = GetComponent<PlayerAttacking>();
+        playerShooting = GetComponent<PlayerShooting>();
     }
 
     private void Update()
@@ -51,9 +57,15 @@ public class PlayerInput : MonoBehaviour
             isShooting = Input.GetButton(Fire1);
         }
 
-        playerMovement.Shooting(isShooting);
-        playerMovement.Attacking(isAttacking);
-        playerMovement.Move(horizontalDirection, isJumpButtonPressed, isCrouchButtonPressed, isDashButtonPressed);
+        playerShooting.Shooting(isShooting);
+        playerAttacking.Attacking(isAttacking);
+
+        playerMovement.Jump(isJumpButtonPressed);
+        playerMovement.Crouch(isCrouchButtonPressed);
+        playerMovement.Dashin(isDashButtonPressed);
+        playerMovement.Move(horizontalDirection);
+
+        CheckPickedSword();
     }
 
     public void SetButtonCrouchEnabled(bool isEnabled)
@@ -74,5 +86,13 @@ public class PlayerInput : MonoBehaviour
     public void SetButtonDashEnabled(bool isEnabled)
     {
         isButtonDashEnabled = isEnabled;
+    }
+
+    private void CheckPickedSword()
+    {
+        if (Global.Instance.isSwordPicked)
+        {
+            SetButtonSwordEnabled(true);
+        }
     }
 }

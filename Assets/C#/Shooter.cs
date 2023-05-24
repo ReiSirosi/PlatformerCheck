@@ -9,7 +9,7 @@ public class Shooter : MonoBehaviour
 
     private void Awake()
     {
-        firePoint.localPosition = new Vector2(0.11f, 0.126f);
+        firePoint.localPosition = new Vector2(0.25f, 0.186f);
     }
 
     public void Shoot(float direction)
@@ -18,9 +18,16 @@ public class Shooter : MonoBehaviour
         Rigidbody2D currentBulletVelocity = currentBullet.GetComponent<Rigidbody2D>();
 
         if (direction >= 0)
+        {
+            currentBullet.transform.Rotate(0, 0, 0);
             currentBulletVelocity.velocity = new Vector2(fireSpeed * 1, currentBulletVelocity.velocity.y);
+        }
         else
+        {
             currentBulletVelocity.velocity = new Vector2(fireSpeed * -1, currentBulletVelocity.velocity.y);
+            currentBullet.transform.Rotate(0, 180, 0);
+        }
+
     }
 
     public void SetFirePointPlus()

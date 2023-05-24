@@ -5,11 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - Damagable
+  - Platform
+  - TriggerForPlat
+  - Bullet
+  - HighLevel
+  - FirstLevel
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -42,11 +48,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2201514929
+    locked: 0
   - name: HightWater
     uniqueID: 1389240319
     locked: 0
   - name: Objects
     uniqueID: 243544115
+    locked: 0
+  - name: Midground
+    uniqueID: 2419296933
     locked: 0
   - name: Character
     uniqueID: 1242729123
@@ -56,4 +68,7 @@ TagManager:
     locked: 0
   - name: DownWater
     uniqueID: 3772055405
+    locked: 0
+  - name: Front
+    uniqueID: 3662523615
     locked: 0

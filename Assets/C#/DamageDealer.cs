@@ -10,8 +10,12 @@ public class DamageDealer : MonoBehaviour
     {
         if (collision.CompareTag("Damagable"))
         {
-            collision.gameObject.GetComponent<Health>().DamageTake(damage);
+            collision.gameObject.GetComponent<HealthEnemy>().DamageTake(damage);
         }
-        Destroy(gameObject);
+
+        if (!collision.CompareTag("TriggerForPlat"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

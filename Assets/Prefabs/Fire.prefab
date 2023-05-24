@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 3987172513733967785}
   - component: {fileID: 2875663645211443266}
   - component: {fileID: 122359809627741690}
+  - component: {fileID: -8441865686230892345}
   m_Layer: 0
   m_Name: Fire
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,9 +75,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1699912465
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayerID: 1242729123
+  m_SortingLayer: 5
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1995283651, guid: 790216cb512b8854b90c0073c50fd0b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -121,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc6841ca9dad90d4686931d1f359177f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
+  damage: 5
 --- !u!50 &2875663645211443266
 Rigidbody2D:
   serializedVersion: 4
@@ -153,9 +154,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.3741529, y: 0.0018960238}
+  serializedVersion: 2
+  m_Radius: 0.738847
+--- !u!58 &-8441865686230892345
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152869836772253946}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.34764633, y: -0.004802197}
+  m_Offset: {x: 0.34570962, y: 0.047534704}
   serializedVersion: 2
-  m_Radius: 0.9155382
+  m_Radius: 0.78261256

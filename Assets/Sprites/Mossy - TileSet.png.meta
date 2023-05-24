@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -731,7 +731,7 @@ TextureImporter:
         serializedVersion: 2
         x: 512
         y: 1024
-        width: 512
+        width: 511
         height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -878,7 +878,7 @@ TextureImporter:
         serializedVersion: 2
         x: 512
         y: 512
-        width: 512
+        width: 510
         height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -918,7 +918,7 @@ TextureImporter:
       name: Mossy - TileSet_38
       rect:
         serializedVersion: 2
-        x: 1537
+        x: 1536
         y: 514
         width: 511
         height: 510
@@ -1089,7 +1089,7 @@ TextureImporter:
         x: 2050
         y: 0
         width: 510
-        height: 511
+        height: 512
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
