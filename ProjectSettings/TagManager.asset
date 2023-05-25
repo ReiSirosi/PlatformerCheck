@@ -11,6 +11,7 @@ TagManager:
   - HighLevel
   - FirstLevel
   - Enemy
+  - Corridor
   layers:
   - Default
   - TransparentFX

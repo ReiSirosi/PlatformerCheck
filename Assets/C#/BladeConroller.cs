@@ -6,8 +6,6 @@ public class BladeConroller : MonoBehaviour
     [SerializeField] private float speed = 5f;
     [SerializeField] private float rotationSpeed = -100f;
 
-    private bool endForBlade = false;
-
     private Rigidbody2D rb;
 
     private void Start()
